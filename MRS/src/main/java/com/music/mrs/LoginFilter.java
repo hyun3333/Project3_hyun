@@ -16,7 +16,6 @@ import javax.servlet.http.HttpSession;
 
 import lombok.extern.slf4j.Slf4j;
 
-@WebFilter("/*")
 @Slf4j
 public class LoginFilter implements Filter {
 
@@ -41,19 +40,19 @@ public class LoginFilter implements Filter {
 		HttpSession session = ((HttpServletRequest)request).getSession();
 		String token = (String) (session.getAttribute("accessToken"));
 		System.out.println(token);
-		if(token == null) {
-			log.info("회원 권한 없음! 통과 안됨!");
-			HttpServletResponse resp = (HttpServletResponse) response;
-			response.setContentType("text/html; charset=UTF-8");
-			PrintWriter out = resp.getWriter();
-			out.print("<script> \r\n");
-			out.print("alert('로그인이 필요한 페이지 입니다.'); \r\n");
-			out.print("location.href='https://accounts.spotify.com/ko/login?continue=https%3A%2F%2Faccounts.spotify.com%2Fauthorize%3Fscope%3Duser-read-private%252Cuser-read-email%26response_type%3Dcode%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A80%252Fmrs%252Fcallback%26state%3Dsome-state-value%26client_id%3Dc0bd3bd84efd46f4bc3ccd4100632043%26show_dialog%3Dtrue'; \r\n");
-			out.print("</script> \r\n");
-			out.flush();
-			out.close();
-			return; //로그인 유효성을 통과하지 못했기 때문에 여기서 요청은 강제 종료.
-		}
+//		if(token == null) {
+//			log.info("회원 권한 없음! 통과 안됨!");
+//			HttpServletResponse resp = (HttpServletResponse) response;
+//			response.setContentType("text/html; charset=UTF-8");
+//			PrintWriter out = resp.getWriter();
+//			out.print("<script> \r\n");
+//			out.print("alert('로그인이 필요한 페이지 입니다.'); \r\n");
+//			out.print("location.href='https://accounts.spotify.com/ko/login?continue=https%3A%2F%2Faccounts.spotify.com%2Fauthorize%3Fscope%3Duser-read-private%252Cuser-read-email%26response_type%3Dcode%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A80%252Fmrs%252Fcallback%26state%3Dsome-state-value%26client_id%3Dc0bd3bd84efd46f4bc3ccd4100632043%26show_dialog%3Dtrue'; \r\n");
+//			out.print("</script> \r\n");
+//			out.flush();
+//			out.close();
+//			return; //로그인 유효성을 통과하지 못했기 때문에 여기서 요청은 강제 종료.
+//		}
 		
 		chain.doFilter(request, response);
 	}
