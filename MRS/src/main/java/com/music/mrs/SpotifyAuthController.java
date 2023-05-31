@@ -144,4 +144,6 @@ public class SpotifyAuthController {
 		modelAndView.addObject("message", message);
 		return modelAndView;
 	}
+	
+	
 }
