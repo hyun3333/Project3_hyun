@@ -60,7 +60,11 @@ public class SpotifyAuthController {
 	public String login(HttpSession session) {
 		// 사용자 인증을 위한 인증 URL을 생성합니다.
 		AuthorizationCodeUriRequest authorizationCodeUriRequest = spotifyApi.authorizationCodeUri()
-				.scope("user-read-private,user-read-email")
+				.scope("user-read-playback-state,user-modify-playback-state,user-read-currently-playing,"
+						+ "app-remote-control,streaming,"
+						+ "user-read-private,user-read-email,"
+						+ "playlist-read-private,playlist-read-collaborative,"
+						+ "playlist-modify-private,playlist-modify-public,user-read-playback-position")
 				.show_dialog(true)
 				.state("some-state-value")
 				.build();
@@ -71,6 +75,10 @@ public class SpotifyAuthController {
 
 		// 생성된 인증 URL로 리다이렉트합니다.
 		log.info("dd: "+authorizationUrl);
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 4e287e8e1cfc9ff64edbc389e45f818c646706db
 		return "redirect:" + authorizationUrl;
 	}
 	
