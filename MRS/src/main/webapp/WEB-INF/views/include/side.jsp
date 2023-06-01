@@ -43,7 +43,7 @@
 			<!-- 로그인 되어있으면 환영인사. -->
 			<c:if test="${accessToken != null}">
 
-				<h1>${displayName} 님</h1>
+				<h1>닉네임 님</h1>
 				<h3>환영합니다.</h3>
 
 				<h1></h1>
