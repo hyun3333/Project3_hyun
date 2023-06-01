@@ -21,7 +21,7 @@
 			<li class="choose">
 				<!-- 추천 테이블 -->
 				<div class="choose-text">them by feeling</div> <!-- 추천 테이블 이미지 -->
-<<<<<<< HEAD
+
 				<div class="choose-img">
 					<img data-keyword="happy" 
 						src="${pageContext.request.contextPath }/img/happy.png" alt="#">
@@ -40,26 +40,6 @@
 					<img data-keyword="fresh"
 						src="${pageContext.request.contextPath }/img/mood_1_NowHot.png" alt="#"> 
 					<img data-keyword="party"
-=======
-				<div id="choose-imgs" class="choose-img">
-					<img data-keyword="happy" 
-						src="${pageContext.request.contextPath }/img/happy.png" alt="#">
-					<img data-keyword="sad" 
-						src="${pageContext.request.contextPath }/img/mood_2_Hip.png" alt="#">
-					<img data-keyword="rain" 
-						src="${pageContext.request.contextPath }/img/mood_4_Sad.png" alt="#">
-					<img data-keyword="love" 
-						src="${pageContext.request.contextPath }/img/mood_1_NowHot.png"	alt="#">
-					<img data-keyword="happy" 
-						src="${pageContext.request.contextPath }/img/happy.png" alt="#">
-					<img data-keyword="happy" 
-						src="${pageContext.request.contextPath }/img/mood_2_Hip.png" alt="#">
-					<img data-keyword="happy" 
-						src="${pageContext.request.contextPath }/img/mood_4_Sad.png" alt="#">
-					<img data-keyword="happy" 
-						src="${pageContext.request.contextPath }/img/mood_1_NowHot.png"	alt="#">
-					<img data-keyword="happy" 
->>>>>>> 4e287e8e1cfc9ff64edbc389e45f818c646706db
 						src="${pageContext.request.contextPath }/img/happy.png" alt="#">
 					<img data-keyword="exercise"
 						src="${pageContext.request.contextPath }/img/mood_2_Hip.png" alt="#"> 
@@ -81,7 +61,8 @@
 
 <script type="text/javascript">
 
-<<<<<<< HEAD
+	console.log('${displayName}');
+
 	document.getElementById('happy-btn').addEventListener('click',function(){
 		location.href ="${pageContext.request.contextPath}/rcmd/spotifyTest";
 	});
@@ -145,7 +126,7 @@
             });
     })
 
-=======
+
 
 	//document.getElementById('happy-btn').addEventListener('click',function(){
 	//	location.href ="${pageContext.request.contextPath}/rcmd/spotifyTest";
@@ -171,5 +152,5 @@
 			});
 	})
 
->>>>>>> 4e287e8e1cfc9ff64edbc389e45f818c646706db
+
 </script>

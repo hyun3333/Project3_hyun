@@ -1,5 +1,6 @@
 package com.music.mrs;
 
+import org.apache.hc.core5.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -14,8 +15,10 @@ import org.springframework.web.servlet.ModelAndView;
 import lombok.extern.slf4j.Slf4j;
 import se.michaelthelin.spotify.SpotifyApi;
 import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials;
+import se.michaelthelin.spotify.model_objects.specification.User;
 import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeRequest;
 import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeUriRequest;
+import se.michaelthelin.spotify.requests.data.users_profile.GetCurrentUsersProfileRequest;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
@@ -75,10 +78,7 @@ public class SpotifyAuthController {
 
 		// 생성된 인증 URL로 리다이렉트합니다.
 		log.info("dd: "+authorizationUrl);
-<<<<<<< HEAD
-=======
-		
->>>>>>> 4e287e8e1cfc9ff64edbc389e45f818c646706db
+
 		return "redirect:" + authorizationUrl;
 	}
 	
@@ -162,6 +162,7 @@ public class SpotifyAuthController {
 		modelAndView.addObject("message", message);
 		return modelAndView;
 	}
+	
 	
 	
 }
